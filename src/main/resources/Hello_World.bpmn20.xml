@@ -3,7 +3,7 @@
   <process id="HW" name="Hello World" isExecutable="true">
     <startEvent id="start" name="Start"></startEvent>
     <scriptTask id="script" name="Hello World" scriptFormat="groovy" activiti:autoStoreVariables="false">
-      <script>System.out.println("Hello world")</script>
+      <script>System.out.println("И опыт сын ошибок трудных,\nИ гений, парадоксов друг,\nИ случай, Бог изобретатель")</script>
     </scriptTask>
     <endEvent id="end"></endEvent>
     <sequenceFlow id="flow1" sourceRef="start" targetRef="script"></sequenceFlow>
