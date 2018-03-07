@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/processdef">
+  <process id="HW" name="HelloWorld" isExecutable="true">
+    <startEvent id="start"></startEvent>
+    <userTask id="dialogbox" activiti:assignee="$INITIATOR" activiti:formKey="nameEntry">
+      <extensionElements>
+        <modeler:initiator-can-complete xmlns:modeler="http://activiti.com/modeler"><![CDATA[true]]></modeler:initiator-can-complete>
+      </extensionElements>
+    </userTask>
+    <scriptTask id="script" scriptFormat="groovy" activiti:autoStoreVariables="false">
+      <script><![CDATA[System.out.println("Hello World")]]></script>
+    </scriptTask>
+    <endEvent id="end"></endEvent>
+    <sequenceFlow id="sid-9E18F38E-A40F-4BE1-AB0E-6275E321537B" sourceRef="start" targetRef="dialogbox"></sequenceFlow>
+    <sequenceFlow id="sid-0863D94C-4862-4635-A073-32F007F2E150" sourceRef="dialogbox" targetRef="script"></sequenceFlow>
+    <sequenceFlow id="sid-D20D94E3-48DA-4B55-A01E-FAAA1922DB30" sourceRef="script" targetRef="end"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_HW">
+    <bpmndi:BPMNPlane bpmnElement="HW" id="BPMNPlane_HW">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="30.0" width="30.0" x="90.0" y="150.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="dialogbox" id="BPMNShape_dialogbox">
+        <omgdc:Bounds height="80.0" width="100.0" x="225.0" y="125.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="script" id="BPMNShape_script">
+        <omgdc:Bounds height="80.0" width="100.0" x="390.0" y="125.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="28.0" width="28.0" x="555.0" y="148.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sid-D20D94E3-48DA-4B55-A01E-FAAA1922DB30" id="BPMNEdge_sid-D20D94E3-48DA-4B55-A01E-FAAA1922DB30">
+        <omgdi:waypoint x="490.0" y="163.83720930232556"></omgdi:waypoint>
+        <omgdi:waypoint x="555.0037842952441" y="162.3254933884827"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-0863D94C-4862-4635-A073-32F007F2E150" id="BPMNEdge_sid-0863D94C-4862-4635-A073-32F007F2E150">
+        <omgdi:waypoint x="325.0" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="390.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="sid-9E18F38E-A40F-4BE1-AB0E-6275E321537B" id="BPMNEdge_sid-9E18F38E-A40F-4BE1-AB0E-6275E321537B">
+        <omgdi:waypoint x="120.0" y="165.0"></omgdi:waypoint>
+        <omgdi:waypoint x="225.0" y="165.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
